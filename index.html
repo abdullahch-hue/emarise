@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ar"><head>
+<meta charset="utf-8"><title>EMARISE Final</title>
+<link rel="stylesheet" href="styles.css"><link rel="icon" href="favicon.png">
+</head><body>
+<h1 data-i18n="hero.title">نبني الجودة ونحقق رؤيتك</h1>
+<p data-i18n="hero.desc">شركة مقاولات سعودية...</p>
+<button id="langBtn">EN</button>
+<script>
+const dict={
+  ar:{'hero.title':'نبني الجودة ونحقق رؤيتك','hero.desc':'شركة مقاولات سعودية...'},
+  en:{'hero.title':'We Build Quality and Deliver Your Vision','hero.desc':'Saudi contracting company...'}
+};
+function setLang(l){document.documentElement.lang=l;document.querySelectorAll('[data-i18n]').forEach(e=>{let k=e.getAttribute('data-i18n');if(dict[l][k])e.innerHTML=dict[l][k];});document.getElementById('langBtn').textContent=l==='ar'?'EN':'عربي';}
+setLang('ar');document.getElementById('langBtn').onclick=()=>{setLang(document.documentElement.lang==='ar'?'en':'ar');};
+</script>
+</body></html>
